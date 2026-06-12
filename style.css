@@ -1,0 +1,198 @@
+/* Remove margens padrão do navegador */
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: rgb(220, 220, 220);
+}
+
+/* Banner */
+#banner{
+    height: 150px;
+    background-image: url("img/banner.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Caixa que contém o texto */
+.texto-banner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Título */
+.texto-banner h1{
+    margin: 0;
+    font-size: 50px;
+}
+
+/* Subtítulo */
+.texto-banner p{
+    margin: 10px;
+    font-size: 25px;
+}
+
+/* menu */
+.menu{
+    background-color:#0a0f1e;
+    padding: 10px;
+    text-align: center;
+}
+
+/* link */
+.menu a{
+    color: white;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-underline-offset: 4px;
+    padding: 10px 30px;
+    display: inline-block;
+    border-radius: 25px;
+    margin: 0 50px
+}
+
+/* mouse encima do link */
+.menu a:hover{
+    background-color:#22315e;
+    transition: 0.4s;
+}
+
+/* página ativa */
+.menu a.ativo{
+    color: rgb(142, 177, 233);
+}
+
+/* quadrado 1 */
+.quadrado{
+    position: relative;
+    height: 130px;
+    width: min(800px, 100%);
+    background-color: white;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/*primeiro icone*/
+.icone-mundo{
+    position: absolute;
+    height: 60%;
+    top: 50%;
+    left: 5%;
+    transform: translatey(-50%);
+}
+
+/*segundo icone*/
+.icone-monitor{
+    position: absolute;
+    height: 60%;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+/*terceiro icone*/
+.icone-lua{
+    position: absolute;
+    height: 60%;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+/*titulo do texto*/
+.titulo-texto{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left: 150px;
+}
+
+/*texto da aba*/
+.texto{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+/*imagem das abas*/
+.imagem-texto{
+    position: absolute;
+    height: 100px;
+    top: 50%;
+    transform: translatey(-50%);
+    left: 73%;
+    border-radius: 5%;
+}
+
+/*MEDIA QUERY: Ajustes exclusivos para telas de celular*/
+/*Essa linha é uma Media Query (consulta de mídia) no CSS. Ela funciona como uma condição ("se... então") que diz ao navegador: "Aplique estes estilos somente se a tela do dispositivo tiver, no máximo, 660 pixels de largura".*/
+@media (max-width: 660px){
+
+    /* Diminui os textos do topo para caberem na tela do celular */
+    .texto-banner h1 {
+        font-size: 32px;
+    }
+    .texto-banner p {
+        font-size: 18px;
+    }
+
+    /* Ajusta os botões do menu tirando a margem gigante de 50px */
+    .menu a {
+        font-size: 16px;
+        padding: 8px 15px;
+        margin: 5px 10px;
+    }
+
+    /* Permite que a caixa branca cresça para baixo no celular */
+    .quadrado {
+        height: auto;
+        min-height: 280px; /* Espaço total para caber tudo empilhado */
+        width: 90%; /* Deixa uma bordinha nas laterais do celular */
+        text-align: center;
+    }
+
+    /* Centraliza os mini ícones na parte superior do quadrado */
+    .icone-mundo, .icone-monitor, .icone-lua {
+        top: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 45px;
+    }
+
+    /* Move o título para o centro, logo abaixo do ícone */
+    .titulo-texto {
+        left: 0;
+        right: 0;
+        top: 75px;
+        font-size: 20px;
+    }
+
+    /* Move o texto explicativo para o centro da caixa */
+    .texto {
+        left: 15px;
+        right: 15px;
+        top: 115px;
+        font-size: 15px;
+    }
+
+    /* Joga a imagem ilustrativa para o final da caixa, centralizada */
+    .imagem-texto {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 80px;
+    }
+}
